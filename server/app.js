@@ -2,7 +2,6 @@ require("dotenv").config();
 const createError = require("http-errors");
 const express = require("express");
 const logger = require("morgan");
-const connectDb = require("./database/config");
 
 const app = express();
 
@@ -14,7 +13,8 @@ app
 //* ROUTES
 app
   // La URL comienza en /api/auth y sigue con cada ruta creada en /routes/auth
-  .use("/api/auth", require("./routes/auth"));
+  .use("/api/auth", require("./routes/auth"))
+  .use("/api/users", require("./routes/users"));
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

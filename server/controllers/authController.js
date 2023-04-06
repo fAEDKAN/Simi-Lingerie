@@ -11,7 +11,7 @@ module.exports = {
       console.log(error);
       return res.status(error.status || 500).json({
         ok: false,
-        msg: error.message || "Ups, hubo un error en LOGIN!",
+        msg: error.message || "Ups, hubo un error en REGISTER!",
       });
     }
   },
